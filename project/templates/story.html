@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Story
+{% endblock %}
+
+{% block body %}
+    <h1>Story Details</h1>
+
+    <ul>
+        <li>Title: {{ story.title }}</li>
+        <li>Link: {{ story.link }}</li>
+    </ul>
+
+    <h2>Publishers</h2>
+    <ul>
+        {% for publisher in publishers %}
+            <li>{{ publisher.name }}</li>
+        {% else %}
+            <li>No publishers.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

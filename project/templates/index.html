@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stories
+{% endblock %}
+
+{% block body %}
+    <h1>Select a Story</h1>
+
+    <form action="{{ url_for('use') }}" method="post">
+
+        <div class="form-group">
+            <select class="form-control" name="story_id">
+                {% for story in stories %}
+                    <option value="{{ story.sid }}">{{ story.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" name="name" placeholder="Publisher Name">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Use story</button>
+        </div>
+
+    </form>
+{% endblock %}
